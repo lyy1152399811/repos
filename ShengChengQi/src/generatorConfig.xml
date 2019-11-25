@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+ <context id="context1">
+		
+		<!-- 生成可以分页的方法 a-->
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"  ></plugin>
+
+
+		<!-- 去掉自动生成的说明性 注解  -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- 连接数据库 ，设置 jdbc 基本配置 -->
+		<jdbcConnection connectionURL="jdbc:mysql://127.0.0.1:3306/mgj"
+			driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+
+		<!-- 指定  项目、包  的路径，生成 pojo 工具类 -->
+		<javaModelGenerator targetPackage="com.qingao.ssm.pojo"
+			targetProject="ssm" />
+
+		<!-- 指定  项目、包  的路径，生成 XXmapper 接口 -->
+		<sqlMapGenerator targetPackage="com.qingao.ssm.mapper"
+			targetProject="ssm"  />
+		
+		<!-- 指定  项目、包  的路径，生成 XXmapper.xml -->
+		<javaClientGenerator targetPackage="com.qingao.ssm.mapper"
+			targetProject="ssm" type="XMLMAPPER" />
+
+
+		<!-- 选择要操作的表格，% 表示任意，也就是全部选中操作； 可以根据需要 按照 table 的名称 值操作指定的一张表格 -->
+
+		<!-- 	 <table tableName="orderinfo"  >
+				</table>  -->
+		<table tableName="%"  >
+		</table> 
+		 
+	</context>
+</generatorConfiguration>
