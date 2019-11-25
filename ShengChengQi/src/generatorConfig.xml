@@ -3,7 +3,7 @@
 <generatorConfiguration>
  <context id="context1">
 		
-		<!-- 生成可以分页的方法 a-->
+		<!-- 生成可以分页的方法 a a-->
 		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"  ></plugin>
 
 
